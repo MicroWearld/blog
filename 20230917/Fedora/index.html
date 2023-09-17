@@ -1,134 +1,225 @@
 <!DOCTYPE html>
-<html>
-  <!-- Html Head Tag-->
-  <head>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="Micro Wearld">
-  <!-- Open Graph Data -->
-  <meta property="og:title" content="Fedora38 KDE Plasma安装记录"/>
-  <meta property="og:description" content="" />
-  <meta property="og:site_name" content="Micro Wearld&#39;s Blog"/>
-  <meta property="og:type" content="article" />
-  <meta property="og:image" content="https://MicorWearld.github.io/blog"/>
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"microwearld.github.io","root":"/blog/","images":"/blog/images","scheme":"Gemini","darkmode":false,"version":"8.18.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/blog/js/config.js"></script>
+
+    <meta name="description" content="系统安装记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fedora38 KDE Plasma安装记录">
+<meta property="og:url" content="https://microwearld.github.io/blog/20230917/Fedora/index.html">
+<meta property="og:site_name" content="Micro Wearld&#39;s Blog">
+<meta property="og:description" content="系统安装记录">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img1.imgtp.com/2023/09/16/MHZs4eVa.png">
+<meta property="og:image" content="https://img1.imgtp.com/2023/09/16/ylulVCpp.png">
+<meta property="og:image" content="https://img1.imgtp.com/2023/09/16/Orscog1F.png">
+<meta property="article:published_time" content="2023-09-17T00:11:06.000Z">
+<meta property="article:modified_time" content="2023-09-17T12:58:05.274Z">
+<meta property="article:author" content="Micro Wearld">
+<meta property="article:tag" content="Fedora">
+<meta property="article:tag" content="KDE">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img1.imgtp.com/2023/09/16/MHZs4eVa.png">
+
+
+<link rel="canonical" href="https://microwearld.github.io/blog/20230917/Fedora/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://microwearld.github.io/blog/20230917/Fedora/","path":"20230917/Fedora/","title":"Fedora38 KDE Plasma安装记录"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Fedora38 KDE Plasma安装记录 | Micro Wearld's Blog</title>
   
-    <link rel="alternate" href="/atom.xml" title="Micro Wearld&#39;s Blog" type="application/atom+xml">
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Micro Wearld's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Who we used to be.</p>
+      <img class="custom-logo-image" src="/blog/logo.png" alt="Micro Wearld's Blog">
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-archives"><a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
   
-  
-    <link rel="icon" href="favicon.png">
-  
+  <aside class="sidebar">
 
-  <!-- Site Title -->
-  <title>Micro Wearld's Blog</title>
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
 
-  <!-- Bootstrap CSS -->
-  
-<link rel="stylesheet" href="/blog/css/bootstrap.min.css">
-
-  <!-- Custom CSS -->
-  
-  
-<link rel="stylesheet" href="/blog/css/style.light.css">
-
-
-  <!-- Google Analytics -->
-  
-
-<meta name="generator" content="Hexo 6.3.0"></head>
-
-  <body>
-    <!-- Page Header -->
-
-
-<header class="site-header header-background" style="background-image: url(https://img1.imgtp.com/2023/09/17/VCvZbO4S.png)">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="page-title with-background-image">
-          <p class="title">Fedora38 KDE Plasma安装记录</p>
-          <p class="subtitle"></p>
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AFFedora%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">为什么是Fedora？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85"><span class="nav-number">3.</span> <span class="nav-text">开始安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%87%86%E5%A4%87%E5%AE%89%E8%A3%85"><span class="nav-number">3.1.</span> <span class="nav-text">1. 准备安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%BD%93%E9%AA%8C%E7%B3%BB%E7%BB%9F"><span class="nav-number">3.2.</span> <span class="nav-text">2. 体验系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85"><span class="nav-number">3.3.</span> <span class="nav-text">3. 开始安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%BC%95%E5%AF%BC"><span class="nav-number">4.</span> <span class="nav-text">修改引导</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8D%A2%E6%BA%90"><span class="nav-number">5.</span> <span class="nav-text">换源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6"><span class="nav-number">6.</span> <span class="nav-text">安装软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87"><span class="nav-number">7.</span> <span class="nav-text">疑难杂症</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%A7%86%E9%A2%91%E8%A7%A3%E7%A0%81"><span class="nav-number">7.1.</span> <span class="nav-text">1. 视频解码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5"><span class="nav-number">7.2.</span> <span class="nav-text">2. 中文输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5"><span class="nav-number">7.3.</span> <span class="nav-text">3. 网络连接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E8%AF%AD"><span class="nav-number">8.</span> <span class="nav-text">结语</span></a></li></ol></div>
         </div>
-        <div class="site-menu with-background-image">
-          <ul>
-            
-              <li>
-                <a href="/blog/">
-                  
-                  Home
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="/blog/archives">
-                  
-                  Archives
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a target="_blank" rel="noopener" href="https://gitee.com/microweald">
-                  
-                  Gitee
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="mailto:chenyuw40@gmail.com">
-                  
-                  Email
-                  
-                </a>
-              </li>
-            
-          </ul>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Micro Wearld</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
         </div>
       </div>
     </div>
-  </div>
-</header>
 
-<article>
-  <div class="container typo">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-info text-muted">
-          
-            <!-- Author -->
-            <span class="author info">By Micro Wearld</span>
-          
-          <!-- Date -->
-          <span class="date-time info">On
-            <span class="date">2023-09-17</span>
-            <span class="time">13:13:05</span>
-          </span>
-          
-          <!--  Categories  -->
-            <span class="categories info">Under 
+    
+  </aside>
 
-<a href="/blog/categories/%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/">系统安装</a>
-</span>
-          
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://microwearld.github.io/blog/20230917/Fedora/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="Micro Wearld">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Micro Wearld's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Fedora38 KDE Plasma安装记录 | Micro Wearld's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Fedora38 KDE Plasma安装记录
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-09-17 08:11:06 / Modified: 20:58:05" itemprop="dateCreated datePublished" datetime="2023-09-17T08:11:06+08:00">2023-09-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" itemprop="url" rel="index"><span itemprop="name">系统安装</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
         </div>
-        <!-- Tags -->
-        
-          <div class="post-tags text-muted">
-            Tags: 
+      </header>
 
-<a class="tag" href="/blog/tags/Fedora/">#Fedora</a> <a class="tag" href="/blog/tags/KDE/">#KDE</a>
-
-
-          </div>
-        
-        <!-- Post Main Content -->
-        <div class="post-content">
-          <br>
-
-<hr>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><hr>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我一直都想使用Linux系统，从Android的Termux到微软的WSL，一开始用Termux，但不能好好敲代码(手机那个键盘你敲一个试试?)。　　<br>后来用WSL， 但我笔记本带不动WSl+Vscode， 就彻底放弃了……<br>后来一直是Windows+Msys2+Vscode(安装ｃ库方便)，但后来使用xmake构建工程时发现vscode的xmake插件识别不到Msys2的xmake,碰巧寝室里有人玩双系统，就搞了。<br><br></p>
 <h2 id="为什么是Fedora？"><a href="#为什么是Fedora？" class="headerlink" title="为什么是Fedora？"></a>为什么是Fedora？</h2><p>我本就是想要一个统一的开发环境而已，显然任何Linux都可以达到我的需求，那为什么选Fedora(我室友在我耳边叨叨了Ubuntu好久)？<br>原因是：我当天刚好看到了它，就这么简单。<br>而且我没有用过Fedora，其他还算用过(Ubuntu WSL，Arch WSL)，Fedora是彻底没见过。<br>而且Fedora有KDE定制版(KUbuntu：???)<br><em>BTW, Fuck you, Windows!</em><br><br></p>
 <h2 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h2><h3 id="1-准备安装"><a href="#1-准备安装" class="headerlink" title="1. 准备安装"></a>1. 准备安装</h3><p>找一个不用的U盘，作为安装介质<br>然后去官网下载安装 <a target="_blank" rel="noopener" href="https://github.com/FedoraQt/MediaWriter/releases/tag/5.0.7">Fedora Media Writer</a>， 双击打开  </p>
@@ -159,65 +250,163 @@
 <p>到此基本安装就完成了<br><br></p>
 <h2 id="修改引导"><a href="#修改引导" class="headerlink" title="修改引导"></a>修改引导</h2><p>现在系统安装好了，但默认还是进入Windows系统，需要修改引导<br>进入你电脑的bios，找到启动菜单，把”Fedora”放到最上方(可能有两个，其中一个是rescue系统的，找以下就行)<br>保存配置，重启电脑，就能看到Grub2的引导界面了<br><br></p>
 <h2 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h2><p>这是国内使用Linux发行版老生常谈的问题了，直接换镜像<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/fedora/">(清华镜像帮助)</a></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo sed -e &#x27;s|^metalink=|#metalink=|g&#x27; \</span><br><span class="line">         -e &#x27;s|^#baseurl=http://download.example/pub/fedora/linux|baseurl=https://mirrors.tuna.tsinghua.edu.cn/fedora|g&#x27; \</span><br><span class="line">         -i.bak \</span><br><span class="line">         /etc/yum.repos.d/fedora.repo \</span><br><span class="line">         /etc/yum.repos.d/fedora-modular.repo \</span><br><span class="line">         /etc/yum.repos.d/fedora-updates.repo \</span><br><span class="line">         /etc/yum.repos.d/fedora-updates-modular.repo</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">sed</span> <span class="token parameter variable">-e</span> <span class="token string">'s|^metalink=|#metalink=|g'</span> <span class="token punctuation">\</span>
+         <span class="token parameter variable">-e</span> <span class="token string">'s|^#baseurl=http://download.example/pub/fedora/linux|baseurl=https://mirrors.tuna.tsinghua.edu.cn/fedora|g'</span> <span class="token punctuation">\</span>
+         <span class="token parameter variable">-i.bak</span> <span class="token punctuation">\</span>
+         /etc/yum.repos.d/fedora.repo <span class="token punctuation">\</span>
+         /etc/yum.repos.d/fedora-modular.repo <span class="token punctuation">\</span>
+         /etc/yum.repos.d/fedora-updates.repo <span class="token punctuation">\</span>
+         /etc/yum.repos.d/fedora-updates-modular.repo<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>OK，现在dnf速度就快了<br><br></p>
 <h2 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h2><p>接下来就是Linux的传统了<br><strong>包管理器，启动！！！</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">开发环境配置</span></span><br><span class="line">sudo dnf install gcc                    # gnu toolchain</span><br><span class="line">sudo dnf install llvm                   # llvm toolchain</span><br><span class="line">sudo dnf install clang                  # clang</span><br><span class="line">sudo dnf install clang-tools-extra      # clang tools, such as clangd</span><br><span class="line">sudo dnf install cmake                  # cmake</span><br><span class="line">sudo dnf install ...</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装VScode</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">添加 VScode 源</span></span><br><span class="line">sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">添加 VScode 存储库到系统</span></span><br><span class="line">sudo tee /etc/yum.repos.d/vscode.repo &lt;&lt;&lt;&#x27;[code]</span><br><span class="line">name=Visual Studio Code</span><br><span class="line">baseurl=https://packages.microsoft.com/yumrepos/vscode</span><br><span class="line">enabled=1</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=https://packages.microsoft.com/keys/microsoft.asc&#x27;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装 VScode</span></span><br><span class="line">sudo dnf install code</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">flatpak 解禁</span></span><br><span class="line">sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装各类浏览器</span></span><br><span class="line">sudo flatpak install org.chromium.Chromium</span><br><span class="line">sudo flatpak install com.microsoft.Edge</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装 QQ</span></span><br><span class="line">sudo flatpak install com.qq.QQ</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装 Xmake</span></span><br><span class="line">wget https://xmake.io/shget.text -O - | bash</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装 zsh</span></span><br><span class="line">sudo dnf install zsh</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">zsh 美化，使用Prezto</span></span><br><span class="line">zsh</span><br><span class="line"></span><br><span class="line">git clone --recursive https://github.com/sorin-ionescu/prezto.git &quot;$&#123;ZDOTDIR:-$HOME&#125;/.zprezto&quot;</span><br><span class="line"></span><br><span class="line">setopt EXTENDED_GLOB</span><br><span class="line">for rcfile in &quot;$&#123;ZDOTDIR:-$HOME&#125;&quot;/.zprezto/runcoms/^README.md(.N); do</span><br><span class="line">  ln -s &quot;$rcfile&quot; &quot;$&#123;ZDOTDIR:-$HOME&#125;/.$&#123;rcfile:t&#125;&quot;</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line">chsh -s /bin/zsh</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">zprezto 配置请去github(https://github.com/sorin-ionescu/prezto)自己研究</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 开发环境配置</span>
+<span class="token function">sudo</span> dnf <span class="token function">install</span> gcc                    <span class="token comment"># gnu toolchain</span>
+<span class="token function">sudo</span> dnf <span class="token function">install</span> llvm                   <span class="token comment"># llvm toolchain</span>
+<span class="token function">sudo</span> dnf <span class="token function">install</span> clang                  <span class="token comment"># clang</span>
+<span class="token function">sudo</span> dnf <span class="token function">install</span> clang-tools-extra      <span class="token comment"># clang tools, such as clangd</span>
+<span class="token function">sudo</span> dnf <span class="token function">install</span> cmake                  <span class="token comment"># cmake</span>
+<span class="token function">sudo</span> dnf <span class="token function">install</span> <span class="token punctuation">..</span>.
+
+<span class="token comment"># 安装VScode</span>
+<span class="token comment"># 添加 VScode 源</span>
+<span class="token function">sudo</span> <span class="token function">rpm</span> <span class="token parameter variable">--import</span> https://packages.microsoft.com/keys/microsoft.asc
+
+<span class="token comment"># 添加 VScode 存储库到系统</span>
+<span class="token function">sudo</span> <span class="token function">tee</span> /etc/yum.repos.d/vscode.repo <span class="token operator">&lt;&lt;&lt;</span><span class="token string">'[code]
+name=Visual Studio Code
+baseurl=https://packages.microsoft.com/yumrepos/vscode
+enabled=1
+gpgcheck=1
+gpgkey=https://packages.microsoft.com/keys/microsoft.asc'</span>
+
+<span class="token comment"># 安装 VScode</span>
+<span class="token function">sudo</span> dnf <span class="token function">install</span> code
+
+<span class="token comment"># flatpak 解禁</span>
+<span class="token function">sudo</span> flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+<span class="token comment"># 安装各类浏览器</span>
+<span class="token function">sudo</span> flatpak <span class="token function">install</span> org.chromium.Chromium
+<span class="token function">sudo</span> flatpak <span class="token function">install</span> com.microsoft.Edge
+
+<span class="token comment"># 安装 QQ</span>
+<span class="token function">sudo</span> flatpak <span class="token function">install</span> com.qq.QQ
+
+<span class="token comment"># 安装 Xmake</span>
+<span class="token function">wget</span> https://xmake.io/shget.text <span class="token parameter variable">-O</span> - <span class="token operator">|</span> <span class="token function">bash</span>
+
+<span class="token comment"># 安装 zsh</span>
+<span class="token function">sudo</span> dnf <span class="token function">install</span> <span class="token function">zsh</span>
+
+<span class="token comment"># zsh 美化，使用Prezto</span>
+<span class="token function">zsh</span>
+
+<span class="token function">git</span> clone <span class="token parameter variable">--recursive</span> https://github.com/sorin-ionescu/prezto.git <span class="token string">"<span class="token variable">$&#123;ZDOTDIR<span class="token operator">:-</span>$HOME&#125;</span>/.zprezto"</span>
+
+setopt EXTENDED_GLOB
+<span class="token keyword">for</span> <span class="token for-or-select variable">rcfile</span> <span class="token keyword">in</span> <span class="token string">"<span class="token variable">$&#123;ZDOTDIR<span class="token operator">:-</span>$HOME&#125;</span>"</span>/.zprezto/runcoms/^README.md<span class="token punctuation">(</span>.N<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
+  <span class="token function">ln</span> <span class="token parameter variable">-s</span> <span class="token string">"<span class="token variable">$rcfile</span>"</span> <span class="token string">"<span class="token variable">$&#123;ZDOTDIR<span class="token operator">:-</span>$HOME&#125;</span>/.<span class="token variable">$&#123;rcfile<span class="token operator">:</span>t&#125;</span>"</span>
+<span class="token keyword">done</span>
+
+chsh <span class="token parameter variable">-s</span> /bin/zsh
+<span class="token comment"># zprezto 配置请去github(https://github.com/sorin-ionescu/prezto)自己研究</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>现在Fedora已经可以满足使用要求了<br><br></p>
 <h2 id="疑难杂症"><a href="#疑难杂症" class="headerlink" title="疑难杂症"></a>疑难杂症</h2><h3 id="1-视频解码"><a href="#1-视频解码" class="headerlink" title="1. 视频解码"></a>1. 视频解码</h3><p>当你以为可以开心体验系统，准备打开B站放松以下时，你会发现：<br>        ？？？加载不出来？？？</p>
 <p>若你有一定的经验，当你按<code>F12</code>打开开发者工具，到控制台下找原因时，你会发现：<br>        ？？？无法解析媒体文件？？？</p>
 <p>这是因为现在大多数的流媒体使用H264解析，但H264是<strong>不开源</strong>的，所以Fedora不会内置H264解析器，需要自己安装解析器<br>你可以直接安装ffmpeg，这会自动安装OpenH264(H264的社区开源版本)</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dnf install ffmpeg</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> dnf <span class="token function">install</span> ffmpeg<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><strong>但是</strong><br>若你在国内，访问OpenH264的repo的速度奇慢无比，以至于dnf告诉你没有可用镜像<br>怎么办？<br>在dnf运行时，它会告诉你它在尝试连接哪个repo的地址，把地址记下来，在其他设备上挂梯子把地址指向的.rmp包文件下下来<br>然后把包文件传到电脑上，接着：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dnf install &lt;你的包&gt;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> dnf <span class="token function">install</span> <span class="token operator">&lt;</span>你的包<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>若提示缺少依赖，就用同样的方法把依赖下下来，装好，然后在装需要依赖的包</p>
 <p>不过，这样也只是解决了一部分视频解码的问题，若要支持全部视频解码，需要安装所有解码器   </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">启用 RPM Fusion 库，支持视频解码</span></span><br><span class="line">sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装所有解码器</span></span><br><span class="line">sudo dnf install gstreamer1-plugins-&#123;bad-\*,good-\*,base&#125; gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">你可以安装视频播放器来支持解码</span></span><br><span class="line">sudo dnf install vlc</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 启用 RPM Fusion 库，支持视频解码</span>
+<span class="token function">sudo</span> dnf <span class="token function">install</span> https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-<span class="token variable"><span class="token variable">$(</span><span class="token function">rpm</span> <span class="token parameter variable">-E</span> %fedora<span class="token variable">)</span></span>.noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-<span class="token variable"><span class="token variable">$(</span><span class="token function">rpm</span> <span class="token parameter variable">-E</span> %fedora<span class="token variable">)</span></span>.noarch.rpm
+
+<span class="token comment"># 安装所有解码器</span>
+<span class="token function">sudo</span> dnf <span class="token function">install</span> gstreamer1-plugins-<span class="token punctuation">&#123;</span>bad-<span class="token punctuation">\</span>*,good-<span class="token punctuation">\</span>*,base<span class="token punctuation">&#125;</span> gstreamer1-plugin-openh264 gstreamer1-libav <span class="token parameter variable">--exclude</span><span class="token operator">=</span>gstreamer1-plugins-bad-free-devel
+
+<span class="token comment"># 你可以安装视频播放器来支持解码</span>
+<span class="token function">sudo</span> dnf <span class="token function">install</span> vlc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>OK，现在可以愉快看B站鬼畜了(误)<br><br></p>
 <h3 id="2-中文输入"><a href="#2-中文输入" class="headerlink" title="2. 中文输入"></a>2. 中文输入</h3><p>这是也是国内使用Linux发行版老生常谈的问题了，使用Fcitx5+词库解决  </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装Fcitx5和中文插件，以及切换输入法工具</span></span><br><span class="line">sudo dnf install fcitx5</span><br><span class="line">sudo dnf install fcitx5-chinese-addons</span><br><span class="line">sudo dnf install im-chooser</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 安装Fcitx5和中文插件，以及切换输入法工具</span>
+<span class="token function">sudo</span> dnf <span class="token function">install</span> fcitx5
+<span class="token function">sudo</span> dnf <span class="token function">install</span> fcitx5-chinese-addons
+<span class="token function">sudo</span> dnf <span class="token function">install</span> im-chooser<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>然后在终端输入<code>im-chooser</code>切换为fcitx5输入法，注销重进系统<br>在底下的状态栏找到输入法托盘图标，右击选择配置，在 “可用输入法”中找到”拼音”，添加到”当前输入法”中<br>现在可以输入中文了，但联想非常拉胯<br>在”当前输入法”中选择”拼音”，点击中间的”配置”，下拉找到”管理字典”，选择”导入”，”从文件”，导入.txt格式的字典文件<br>若你有.scel格式的搜狗字典文件，可以选择”来自搜狗细胞词库的文件”来导入字典<br>字典文件可以在网上搜到，这里推荐一个<a target="_blank" rel="noopener" href="https://github.com/thunlp/THUOCL/tree/master">THUOCL清华词库</a>，质量高，好用<br>若需要<a target="_blank" rel="noopener" href="https://wwqe.lanzouy.com/b04wily4j">搜狗词库</a>，自取，密码:e570<br><br></p>
 <h3 id="3-网络连接"><a href="#3-网络连接" class="headerlink" title="3. 网络连接"></a>3. 网络连接</h3><p>众所周知，<a target="_blank" rel="noopener" href="https://wiki.mbalib.com/wiki/GFW">GFW</a>导致国内访问github困难，所以梯子是必备的<br>不详细说明了，直接贴连接吧： <a target="_blank" rel="noopener" href="https://github.com/wanhebin/clash-for-linux">https://github.com/wanhebin/clash-for-linux</a><br><br></p>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>折腾了两天，在网络资源和室友的帮助下搞好了Fedora，Fedora的软件支持确实比Ubuntu少的多，而且问题也多，但折腾的过程很享受<br>不得不说，笔记本用Linux确实比Windows好，Windows开机就占了8GB内存，Linux只占3GB，使用也只占不到5GB，LinuxNB！！！<br>但这都是在我不玩游戏只搞开发的前提下，如果想打游戏，Linux的兼容会让你想死，所以还是用Windows吧。</p>
 
-        </div>
-      </div>
     </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/Fedora/" rel="tag"># Fedora</a>
+              <a href="/blog/tags/KDE/" rel="tag"># KDE</a>
+          </div>
+
+        
+
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Micro Wearld</span>
   </div>
-</article>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
 
-
-
-    <!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <p class="copyright text-muted">
-          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
-          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
-        <p class="copyright text-muted">
-          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
-        </p>
-      </div>
     </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
   </div>
-</footer>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
 
-    <!-- After Footer Scripts -->
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/next-boot.js"></script>
 
-<script src="/blog/js/highlight.pack.js"></script>
+  
 
-<script>
-  document.addEventListener("DOMContentLoaded", function(event) {
-    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
-    codeBlocks.forEach(function(block, index) {
-      hljs.highlightBlock(block);
-    });
-  });
-</script>
 
-  </body>
+
+
+
+
+  
+
+
+
+
+
+</body>
 </html>
-
