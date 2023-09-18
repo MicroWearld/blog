@@ -3145,7 +3145,7 @@ header.header {
   }
 }
 body {
-  background: url("/blog/night_front.jpg");
+  background: url("/blog/img/night_front.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
