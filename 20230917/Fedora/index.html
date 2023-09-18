@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://img1.imgtp.com/2023/09/16/MHZs4eVa.png">
 <meta property="og:image" content="https://img1.imgtp.com/2023/09/16/ylulVCpp.png">
 <meta property="article:published_time" content="2023-09-17T00:11:06.000Z">
-<meta property="article:modified_time" content="2023-09-18T01:25:52.716Z">
+<meta property="article:modified_time" content="2023-09-18T02:07:32.037Z">
 <meta property="article:author" content="Micro Wearld">
 <meta property="article:tag" content="Fedora">
 <meta property="article:tag" content="KDE">
@@ -138,14 +138,12 @@
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-          <a href="/blog/categories/">
         <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">categories</span></a>
+        <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/blog/tags/">
         <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">tags</span></a>
+        <span class="site-state-item-name">tags</span>
       </div>
   </nav>
 </div>
@@ -207,7 +205,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-09-18 09:25:52" itemprop="dateModified" datetime="2023-09-18T09:25:52+08:00">2023-09-18</time>
+      <time title="Modified: 2023-09-18 10:07:32" itemprop="dateModified" datetime="2023-09-18T10:07:32+08:00">2023-09-18</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -265,32 +263,31 @@ alt="Write Options" /></p>
 高级启动 =&gt; 立即重新启动<br />
 重启后，会进入高级启动界面，选择"使用设备"，然后选择"Linpus
 lite"，就会进入Grub2引导界面，选择第一个"Start Fedora-KDE-Live
-38"，就会进入Fedora</p>
-<blockquote>
-<p>题外话：关于 Lite系统</p>
+38"，就会进入Fedora <details class="note info no-icon"><summary><p>题外话：关于 Lite系统</p>
+</summary>
 <p>使用Lite的目的是让用户得以在不安装完整系统的前提下较完整的体验操作系统，能让用户更好的做出是否安装的决定</p>
 <p>详情见：<a
 target="_blank" rel="noopener" href="https://fedoraproject.org/wiki/FedoraLiveCD/zh-cn">Fedora
 LiteCD</a></p>
-</blockquote>
-<p>在体验过系统，确认需要安装后，双击桌面的"Install to Hard Drive"图标
+
+</details>
+在体验过系统，确认需要安装后，双击桌面的"Install to Hard Drive"图标
 <br></p>
 <h3 id="开始安装-1">开始安装</h3>
 <p>跟着安装引导做即可<br />
 注意设置root用户的密码(你可以不使用root用户，但这样的话之后改Grub引导设置时会比较麻烦)</p>
-<blockquote>
-<p>关于双系统(Windows+Linux)</p>
+<details class="note warning"><summary><p>关于双系统(Windows+Linux)</p>
+</summary>
 <p>第一是检查你的盘是否有BitLocker，若有，请务必解锁它！！！
 因为安装双系统后，你的盘大概率会被加密锁上，若你没有解锁，你是无法进入windows系统的！！！
-解锁方式是，在管理员模式下打开cmd，然后输入以下命令</p>
-<p>manage-bde -unlock <你的盘></p>
-<p>你可以输入 manage-bde -status 查看解锁状态
+解锁方式是，在管理员模式下打开cmd，然后输入以下命令 <pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">manage-bde -unlock &lt;你的盘&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+你可以输入 manage-bde -status 查看解锁状态
 请把所有盘都解锁，并且等待提示解锁完成，不然你绝对会后悔的！！！
 若你发现盘被锁了开不了，按下方提示解锁</p>
 <ol type="1">
 <li>进入你电脑的bios界面，关闭安全启动</li>
-<li>在另一台设备的浏览器转到
-https://account.microsoft.com/devices/recoverykey
+<li>在另一台设备的浏览器转到 <a
+target="_blank" rel="noopener" href="https://account.microsoft.com/devices/recoverykey">https://account.microsoft.com/devices/recoverykey</a>
 登陆MS账户，找到恢复密钥</li>
 <li>重新输入解锁命令，输入你找到的恢复密钥</li>
 <li>等待解锁完成</li>
@@ -299,7 +296,8 @@ https://account.microsoft.com/devices/recoverykey
 target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/manage-bde">manage-bde</a>，<a
 target="_blank" rel="noopener" href="https://support.microsoft.com/zh-cn/windows/%E5%9C%A8-windows-%E4%B8%AD%E6%9F%A5%E6%89%BE-bitlocker-%E6%81%A2%E5%A4%8D%E5%AF%86%E9%92%A5-6b71ad27-0b89-ea08-f143-056f5ab347d6">在
 Windows 中查找 BitLocker 恢复密钥</a></p>
-</blockquote>
+
+</details>
 <p>到此基本安装就完成了 <br></p>
 <h2 id="修改引导">修改引导</h2>
 <p>现在系统安装好了，但默认还是进入Windows系统，需要修改引导<br />
@@ -431,6 +429,13 @@ target="_blank" rel="noopener" href="https://wiki.mbalib.com/wiki/GFW">GFW</a>�
           </div>
 
         
+  <div class="social-like a2a_kit a2a_kit_size_32 a2a_default_style">
+    <a class="a2a_dd" target="_blank" rel="noopener" href="https://www.addtoany.com/share"></a>
+      <a class="a2a_button_facebook"></a>
+      <a class="a2a_button_twitter"></a>
+      <a class="a2a_button_wechat"></a>
+      <a class="a2a_button_qzone"></a>
+  </div>
 
     </footer>
   </article>
@@ -484,6 +489,7 @@ target="_blank" rel="noopener" href="https://wiki.mbalib.com/wiki/GFW">GFW</a>�
 
   <script src="/blog/js/third-party/pace.js"></script>
 
+  <script src="/blog/js/third-party/addtoany.js"></script>
 
   
 
