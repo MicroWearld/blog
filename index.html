@@ -176,7 +176,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/20230918/MaPT/" class="post-title-link" itemprop="url">MathJax and plotly.js Test</a>
+          <a href="/blog/20230918/MaPT/" class="post-title-link" itemprop="url">Test</a>
         </h2>
 
         <div class="post-meta-container">
@@ -188,7 +188,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2023-09-18 10:46:17 / Modified: 13:06:37" itemprop="dateCreated datePublished" datetime="2023-09-18T10:46:17+08:00">2023-09-18</time>
+      <time title="Created: 2023-09-18 10:46:17 / Modified: 13:53:24" itemprop="dateCreated datePublished" datetime="2023-09-18T10:46:17+08:00">2023-09-18</time>
     </span>
 
   
@@ -201,8 +201,11 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><span class="math display">\[
+          <p><span class="math inline">\(MathJax \quad Test\)</span> <span
+class="math display">\[
 y = sin(x)
+\]</span> <span class="math display">\[
+l = \alpha r
 \]</span></p>
 <div id="test">
 
@@ -218,9 +221,33 @@ for (var x = 0; x <= 10; x += 0.1) {
 }
 
 var data = [{x:xValues, y:yValues, mode:"lines"}];
-var layout = {};
+var layout = {title: "Plotly.js Test"};
 Plotly.newPlot("test", data, layout);
 </script>
+<pre class="mermaid">
+graph TD
+A[Mermaid Test] --&gt;|Text| B(Round)
+B --&gt; C{Decision}
+C --&gt;|One| D[Result 1]
+C --&gt;|Two| E[Result 2]
+</pre>
+<div class="wavedrom"><script type="WaveDrom">
+{reg:[
+    {bits: 7,  name: 0x07, attr: [
+      'VLxU,VLE zero-extended',
+      'VLxU,VLE zero-extended, fault-only-first',
+      'VLxU sign-extended',
+      'VLxU sign-extended, fault-only-first',
+    ]},
+    {bits: 5,  name: 'vd', attr: 'destination of load', type: 2},
+    {bits: 3,  name: 'width'},
+    {bits: 5,  name: 'rs1', attr: 'Wavedrom Test', type: 4},
+    {bits: 5,  name: 'lumop', attr: [0, 16, 0, 16]},
+    {bits: 1,  name: 'vm'},
+    {bits: 3,  name: 'mop', attr: [0, 0, 4, 4]},
+    {bits: 3,  name: 'nf'},
+]}
+</script></div>
 
       
     </div>
@@ -369,7 +396,12 @@ Plotly.newPlot("test", data, layout);
 
   
 
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.3.0/mermaid.min.js","integrity":"sha256-9y71g5Lz/KLsHjB8uXwnkuWDtAMDSzD/HdIbqhJfTAI="}}</script>
+  <script src="/blog/js/third-party/tags/mermaid.js"></script>
 
+  <script class="next-config" data-name="wavedrom" type="application/json">{"enable":true,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/wavedrom/3.3.0/wavedrom.min.js","integrity":"sha256-IRMDzTC+wK5stMucZ/XSXkeS5VNtxZ+/Bm8Mcqfoxdo="}}</script>
+  <script class="next-config" data-name="wavedrom_skin" type="application/json">{"enable":true,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/wavedrom/3.3.0/skins/default.js","integrity":"sha256-fduc/Zszk5ezWws2uInY/ALWVmIrmV6VTgXbsYSReFI="}}</script>
+  <script src="/blog/js/third-party/tags/wavedrom.js"></script>
 
 
   <script src="/blog/js/third-party/pace.js"></script>
