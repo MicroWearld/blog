@@ -249,6 +249,9 @@ C --&gt;|Two| E[Result 2]
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># Font Test</span>
 0123456789<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 ]]></content>
+      <categories>
+        <category>test</category>
+      </categories>
       <tags>
         <tag>test</tag>
       </tags>
