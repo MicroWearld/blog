@@ -2,18 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://microwearld.github.io/blog/tags/index.html</loc>
+    <loc>https://microwearld.github.io/blog/post/Fedora/</loc>
     
-    <lastmod>2023-09-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://microwearld.github.io/blog/categories/index.html</loc>
-    
-    <lastmod>2023-09-18</lastmod>
+    <lastmod>2023-09-19</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -22,16 +13,25 @@
   <url>
     <loc>https://microwearld.github.io/blog/post/MaPT/</loc>
     
-    <lastmod>2023-09-18</lastmod>
+    <lastmod>2023-09-19</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://microwearld.github.io/blog/post/Fedora/</loc>
+    <loc>https://microwearld.github.io/blog/categories/index.html</loc>
     
-    <lastmod>2023-09-18</lastmod>
+    <lastmod>2023-09-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://microwearld.github.io/blog/tags/index.html</loc>
+    
+    <lastmod>2023-09-19</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -49,7 +49,7 @@
 
   <url>
     <loc>https://microwearld.github.io/blog</loc>
-    <lastmod>2023-09-18</lastmod>
+    <lastmod>2023-09-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -57,21 +57,21 @@
   
   <url>
     <loc>https://microwearld.github.io/blog/tags/Fedora/</loc>
-    <lastmod>2023-09-18</lastmod>
+    <lastmod>2023-09-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://microwearld.github.io/blog/tags/KDE/</loc>
-    <lastmod>2023-09-18</lastmod>
+    <lastmod>2023-09-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://microwearld.github.io/blog/tags/test/</loc>
-    <lastmod>2023-09-18</lastmod>
+    <lastmod>2023-09-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -80,14 +80,14 @@
   
   <url>
     <loc>https://microwearld.github.io/blog/categories/%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/</loc>
-    <lastmod>2023-09-18</lastmod>
+    <lastmod>2023-09-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://microwearld.github.io/blog/categories/test/</loc>
-    <lastmod>2023-09-18</lastmod>
+    <lastmod>2023-09-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
