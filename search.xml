@@ -194,10 +194,10 @@ href="https://wiki.mbalib.com/wiki/GFW">GFW</a>导致国内访问github困难，
 但这都是在我不玩游戏只搞开发的前提下，如果想打游戏，Linux的兼容会让你想死，所以还是用Windows吧。</p>
 ]]></content>
       <categories>
-        <category>系统安装</category>
+        <category>系统安装|installer_icon.png</category>
       </categories>
       <tags>
-        <tag>Fedora</tag>
+        <tag>Fedora|fa-brands fa-fedora</tag>
         <tag>KDE</tag>
       </tags>
   </entry>
@@ -250,10 +250,10 @@ C --&gt;|Two| E[Result 2]
 0123456789<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 ]]></content>
       <categories>
-        <category>test</category>
+        <category>test|test_icon.png</category>
       </categories>
       <tags>
-        <tag>test</tag>
+        <tag>test|fa-solid fa-vials</tag>
       </tags>
   </entry>
 </search>
