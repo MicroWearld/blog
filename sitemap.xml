@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://microwearld.github.io/blog/post/MaPT/</loc>
+    <loc>https://microwearld.github.io/blog/post/Fedora/</loc>
     
     <lastmod>2023-09-20</lastmod>
     
@@ -11,7 +11,16 @@
   </url>
   
   <url>
-    <loc>https://microwearld.github.io/blog/post/Fedora/</loc>
+    <loc>https://microwearld.github.io/blog/links/index.html</loc>
+    
+    <lastmod>2023-09-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://microwearld.github.io/blog/post/MaPT/</loc>
     
     <lastmod>2023-09-20</lastmod>
     
@@ -56,7 +65,7 @@
 
   
   <url>
-    <loc>https://microwearld.github.io/blog/tags/Fedora-fa-brands-fa-fedora/</loc>
+    <loc>https://microwearld.github.io/blog/tags/Fedora/</loc>
     <lastmod>2023-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -70,7 +79,7 @@
   </url>
   
   <url>
-    <loc>https://microwearld.github.io/blog/tags/test-fa-solid-fa-vials/</loc>
+    <loc>https://microwearld.github.io/blog/tags/test/</loc>
     <lastmod>2023-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -79,14 +88,14 @@
 
   
   <url>
-    <loc>https://microwearld.github.io/blog/categories/%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85-installer-icon-png/</loc>
+    <loc>https://microwearld.github.io/blog/categories/%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/</loc>
     <lastmod>2023-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://microwearld.github.io/blog/categories/test-test-icon-png/</loc>
+    <loc>https://microwearld.github.io/blog/categories/test/</loc>
     <lastmod>2023-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

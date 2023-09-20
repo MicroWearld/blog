@@ -3,11 +3,10 @@
   <entry>
     <title>Fedora38 KDE Plasma安装记录</title>
     <url>/blog/post/Fedora/</url>
-    <content><![CDATA[<hr />
-<h2 id="前言">前言</h2>
+    <content><![CDATA[<h2 id="前言">前言</h2>
 <p>我一直都想使用Linux系统，从Android的Termux到微软的WSL，一开始用Termux，但不能好好敲代码(手机那个键盘你敲一个试试?)。　　
 后来用WSL， 但我笔记本带不动WSl+Vscode， 就彻底放弃了......<br />
-后来一直是Windows+Msys2+Vscode(安装ｃ库方便)，但后来使用xmake构建工程时发现vscode的xmake插件识别不到Msys2的xmake,碰巧寝室里有人玩双系统，就搞了。
+后来一直是Windows+Msys2+Vscode(安装ｃ库方便)，但后来使用xmake构建工程时发现vscode的xmake插件识别不到Msys2的xmake,碰巧寝室里有人玩双系统，就搞了。<br />
 <br></p>
 <h2 id="为什么是fedora">为什么是Fedora？</h2>
 <p>我本就是想要一个统一的开发环境而已，显然任何Linux都可以达到我的需求，那为什么选Fedora(我室友在我耳边叨叨了Ubuntu好久)？<br />
@@ -194,10 +193,10 @@ href="https://wiki.mbalib.com/wiki/GFW">GFW</a>导致国内访问github困难，
 但这都是在我不玩游戏只搞开发的前提下，如果想打游戏，Linux的兼容会让你想死，所以还是用Windows吧。</p>
 ]]></content>
       <categories>
-        <category>系统安装|installer_icon.png</category>
+        <category>系统安装</category>
       </categories>
       <tags>
-        <tag>Fedora|fa-brands fa-fedora</tag>
+        <tag>Fedora</tag>
         <tag>KDE</tag>
       </tags>
   </entry>
@@ -250,10 +249,10 @@ C --&gt;|Two| E[Result 2]
 0123456789<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 ]]></content>
       <categories>
-        <category>test|test_icon.png</category>
+        <category>test</category>
       </categories>
       <tags>
-        <tag>test|fa-solid fa-vials</tag>
+        <tag>test</tag>
       </tags>
   </entry>
 </search>
