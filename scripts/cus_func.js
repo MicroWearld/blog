@@ -1,7 +1,7 @@
 function generateData(bot, top, exp) {
     let data = [];
-    for (let i = bot; i <= top; i += 0.001) {
-        data.push([i, eval(exp)]);
+    for (let x = bot; x <= top; x += 0.001) {
+        data.push([x, eval(exp)]);
     }
     return data;
 }
@@ -16,7 +16,7 @@ function generateDataSet(bot, top, fes) {
 
 function InitChart(ele_id) {
     var chartDom = document.getElementById(ele_id);
-    return echarts.init(chartDom);
+    return echarts.init(chartDom, 'dark');
 }
 
 function RealLog(x, y) {
