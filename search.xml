@@ -190,22 +190,6 @@ chsh <span class="token parameter variable">-s</span> /bin/zsh
       </tags>
   </entry>
   <entry>
-    <title>Blog Test</title>
-    <url>/blog/post/math-func/</url>
-    <content><![CDATA[<div class="tabs" id="fourth-unique-name"><ul class="nav-tabs"><li class="tab active"><a href="#fourth-unique-name-1">Solution 1</a></li><li class="tab"><a href="#fourth-unique-name-2">Solution 2</a></li><li class="tab"><a href="#fourth-unique-name-3">Solution 3</a></li></ul><div class="tab-content"><div class="tab-pane active" id="fourth-unique-name-1"><p><strong>This is Tab 1.</strong></p></div><div class="tab-pane" id="fourth-unique-name-2"><p><strong>This is Tab 2.</strong></p></div><div class="tab-pane" id="fourth-unique-name-3"><p><strong>This is Tab 3.</strong></p></div></div></div>
-<div id="chart1" style="width: 100%;height:600px;"></div>
-<script type="text/javascript" src="/blog/scripts/dark.js"></script>
-<script type="text/javascript" src="/blog/scripts/post/chart1.js"></script>
-<br>
-]]></content>
-      <categories>
-        <category>test</category>
-      </categories>
-      <tags>
-        <tag>test</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>C 语言学习记录第一弹</title>
     <url>/blog/post/c-study1/</url>
     <content><![CDATA[<p>我在翻阅 <a href="https://zh.cppreference.com/w/c/language/translation_phases">C Refernce</a> 的&quot;翻译阶段3&quot;时，注意到&quot;<ins>最大吞噬</ins>&quot;原则:</p>
@@ -330,10 +314,29 @@ GNU assembler version <span class="token number">2.39</span> <span class="token 
 <p>由此可见, 在运算符两旁加空格不仅是为了美观, <strong>更是为了避免因&quot;最大吞噬&quot;导致的编译错误</strong>。</p>
 <p>所以各位, 代码一定要美观啊! 要不然连编译器都受不了了报错啊！</p>
 ]]></content>
+      <categories>
+        <category>C</category>
+      </categories>
       <tags>
         <tag>C</tag>
         <tag>学习</tag>
         <tag>实验</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Blog Test</title>
+    <url>/blog/post/math-func/</url>
+    <content><![CDATA[<div class="tabs" id="fourth-unique-name"><ul class="nav-tabs"><li class="tab active"><a href="#fourth-unique-name-1">Solution 1</a></li><li class="tab"><a href="#fourth-unique-name-2">Solution 2</a></li><li class="tab"><a href="#fourth-unique-name-3">Solution 3</a></li></ul><div class="tab-content"><div class="tab-pane active" id="fourth-unique-name-1"><p><strong>This is Tab 1.</strong></p></div><div class="tab-pane" id="fourth-unique-name-2"><p><strong>This is Tab 2.</strong></p></div><div class="tab-pane" id="fourth-unique-name-3"><p><strong>This is Tab 3.</strong></p></div></div></div>
+<div id="chart1" style="width: 100%;height:600px;"></div>
+<script type="text/javascript" src="/blog/scripts/dark.js"></script>
+<script type="text/javascript" src="/blog/scripts/post/chart1.js"></script>
+<br>
+]]></content>
+      <categories>
+        <category>test</category>
+      </categories>
+      <tags>
+        <tag>test</tag>
       </tags>
   </entry>
 </search>
