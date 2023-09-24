@@ -135,7 +135,7 @@ chsh <span class="token parameter variable">-s</span> /bin/zsh
 <h3 id="视频解码"><a class="header-anchor" href="#视频解码"></a>视频解码</h3>
 <p>当你以为可以开心体验系统，准备打开B站放松以下时，你会发现：<br>
 ？？？加载不出来？？？</p>
-<p>若你有一定的经验，当你按<code>F12</code>打开开发者工具，到控制台下找原因时，你会发现：<br>
+<p>若你有一定的经验，当你按 <kbd>F12</kbd> 打开开发者工具，到控制台下找原因时，你会发现：<br>
 ？？？无法解析媒体文件？？？</p>
 <p>这是因为现在大多数的流媒体使用H264解析，但H264是<strong>不开源</strong>的，所以Fedora不会内置H264解析器，需要自己安装解析器<br>
 你可以直接安装ffmpeg，这会自动安装OpenH264(H264的社区开源版本)</p>
@@ -192,7 +192,8 @@ chsh <span class="token parameter variable">-s</span> /bin/zsh
   <entry>
     <title>Blog Test</title>
     <url>/blog/post/math-func/</url>
-    <content><![CDATA[<div id="chart1" style="width: 100%;height:600px;"></div>
+    <content><![CDATA[<div class="tabs" id="fourth-unique-name"><ul class="nav-tabs"><li class="tab active"><a href="#fourth-unique-name-1">Solution 1</a></li><li class="tab"><a href="#fourth-unique-name-2">Solution 2</a></li><li class="tab"><a href="#fourth-unique-name-3">Solution 3</a></li></ul><div class="tab-content"><div class="tab-pane active" id="fourth-unique-name-1"><p><strong>This is Tab 1.</strong></p></div><div class="tab-pane" id="fourth-unique-name-2"><p><strong>This is Tab 2.</strong></p></div><div class="tab-pane" id="fourth-unique-name-3"><p><strong>This is Tab 3.</strong></p></div></div></div>
+<div id="chart1" style="width: 100%;height:600px;"></div>
 <script type="text/javascript" src="/blog/scripts/dark.js"></script>
 <script type="text/javascript" src="/blog/scripts/post/chart1.js"></script>
 <br>
@@ -202,6 +203,137 @@ chsh <span class="token parameter variable">-s</span> /bin/zsh
       </categories>
       <tags>
         <tag>test</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C 语言学习记录第一弹</title>
+    <url>/blog/post/c-study1/</url>
+    <content><![CDATA[<p>我在翻阅 <a href="https://zh.cppreference.com/w/c/language/translation_phases">C Refernce</a> 的&quot;翻译阶段3&quot;时，注意到&quot;<ins>最大吞噬</ins>&quot;原则:</p>
+<blockquote>
+<p>若已经分析输入为到给定字符为止的预处理记号，则通常将能构成一个预处理记号的最长字符序列处理成下个预处理记号，即这会导致后继分析失败。这常被称为最大吞噬 (maximal munch) 。</p>
+</blockquote>
+<p>“<ins>最大吞噬</ins>&quot;原则指出: 编译器会尽可能把能识别成一个预处理记号的多义记号处理成一个记号<br>
+类似正则表达式中的&quot;贪婪匹配”</p>
+<div class="note info no-icon"><p>例: <code>a+++++b</code> 译为 <code>a++ ++ +b</code> 而不是 <code>a++ + ++b</code></p>
+</div>
+<p>根据定义与官方示例, 做以下实验:</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">// main.c</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0xE</span><span class="token operator">+</span>b<span class="token punctuation">;</span>        <span class="token comment">//! 错误：整数常量的“+b”后缀无效, 编译无法通过</span>
+    <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">0xE</span> <span class="token operator">+</span> b<span class="token punctuation">;</span>      <span class="token comment">//  正常: 编译通过</span>
+    <span class="token keyword">int</span> c <span class="token operator">=</span> <span class="token number">0xF</span><span class="token operator">+</span>b<span class="token punctuation">;</span>        <span class="token comment">//  正常: 编译通过</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>第一行: 因为E在数字中可以表示科学计数法(如1E10, 2E+2, 1.5E-3), 所以编译器处理&quot;0xE+b&quot;时会将它们放在一起, 导致编译出错。<br>
+第二行: 使用空格可以分解预处理记号。<br>
+第三行: “0xF&quot;是单义的, 编译器不会把它和”+b&quot;放在一起。</p>
+<p>由此可知, 编译器对符号的处理是以字符为基础单位的, 而不是一个逻辑行。<br>
+它无法分辨符号的含义, 它不知道&quot;0xE&quot;是一个整体, 它也不知道&quot;E&quot;后面的&quot;+&quot;不是后缀而是加法运算符, 虽然我们一眼就可以看出, 但编译器做不到。</p>
+<p>事实上, 上述程序在编译经历5个阶段:</p>
+<ol>
+<li>源码输入</li>
+<li>词法分析, 产生词素</li>
+<li>语法分析, 产生语法树</li>
+<li>语义分析, 校验语法树, 产生解析树</li>
+<li>中间代码生成</li>
+</ol>
+<p>而 C 编译器则由以下几个部分构成:</p>
+<ol>
+<li>预处理器</li>
+<li>编译器</li>
+<li>汇编器</li>
+<li>链接器</li>
+</ol>
+<p>若在编译时加上<code>--save-temp</code>, 编译器就会保留期间产生的中间代码<br>
+其中<code>.i</code>文件为预处理器运行后生成的文件, <code>.s</code>为编译器, <code>.o</code>为汇编器, <code>.out/.exe</code>为最终产物(链接器)<br>
+实验程序的预处理如下:</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">// main.i</span>
+
+# <span class="token number">0</span> <span class="token string">"main.c"</span>
+# <span class="token number">0</span> <span class="token string">"&lt;built-in>"</span>
+# <span class="token number">0</span> <span class="token string">"&lt;命令行>"</span>
+# <span class="token number">1</span> <span class="token string">"/usr/include/stdc-predef.h"</span> <span class="token number">1</span> <span class="token number">3</span> <span class="token number">4</span>
+# <span class="token number">0</span> <span class="token string">"&lt;命令行>"</span> <span class="token number">2</span>
+# <span class="token number">1</span> <span class="token string">"main.c"</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0xE</span><span class="token operator">+</span>b<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">0xE</span> <span class="token operator">+</span> b<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> c <span class="token operator">=</span> <span class="token number">0xF</span><span class="token operator">+</span>b<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>编译器结果如下:</p>
+<pre class="line-numbers language-asm" data-language="asm"><code class="language-asm">&#x2F;&#x2F; main.s
+
+&#x2F;&#x2F; 这是结果
+	.file	&quot;main.c&quot;
+
+&#x2F;&#x2F; 正常长这样
+	.file	&quot;main.c&quot;
+	.text
+	.globl	main
+	.type	main, @function
+main:
+.LFB0:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	addl	$14, -4(%rbp)
+	movl	-4(%rbp), %eax
+	addl	$15, %eax
+	movl	%eax, -8(%rbp)
+	movl	$0, %eax
+	popq	%rbp
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE0:
+	.size	main, .-main
+	.ident	&quot;GCC: (GNU) 13.2.1 20230728 (Red Hat 13.2.1-1)&quot;
+	.section	.note.GNU-stack,&quot;&quot;,@progbits<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>可以看到编译器输出异常了, 编译器只是加载了文件, 没有生成代码 ,也就是在编译阶段出错了。<br>
+使用<code>--verbose</code>也可以发现问题:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 忽略gcc参数配置</span>
+
+<span class="token comment"># 预处理开始</span>
+<span class="token comment">#include "..." 搜索从这里开始：</span>
+<span class="token comment">#include &lt;...> 搜索从这里开始：</span>
+ /usr/lib/gcc/x86_64-redhat-linux/13/include
+ /usr/local/include
+ /usr/include
+搜索列表结束。
+<span class="token comment"># 预处理结束</span>
+
+<span class="token comment"># 编译开始</span>
+Compiler executable checksum: 5eaad519de86376ffacf24afdb40da84
+<span class="token comment"># 编译结束, 是的, 它只给你看个hash</span>
+
+<span class="token comment"># 错误信息</span>
+main.c: 在函数‘main’中:
+main.c:2:13: 错误：整数常量的“+b”后缀无效
+    <span class="token number">2</span> <span class="token operator">|</span>     int a <span class="token operator">=</span> 0xE+b<span class="token punctuation">;</span>
+      <span class="token operator">|</span>             ^~~~~
+
+<span class="token comment"># 接下来是后续正常的情况</span>
+
+<span class="token comment"># 忽略gcc汇编参数, 汇编开始</span>
+GNU assembler version <span class="token number">2.39</span> <span class="token punctuation">(</span>x86_64-redhat-linux<span class="token punctuation">)</span> using BFD version version <span class="token number">2.39</span>-9.fc38
+<span class="token comment"># 汇编结束</span>
+
+<span class="token comment"># 链接</span>
+<span class="token assign-left variable">COMPILER_PATH</span><span class="token operator">=</span>/usr/libexec/gcc/x86_64-redhat-linux/13/:/usr/libexec/gcc/x86_64-redhat-linux/13/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/13/:/usr/lib/gcc/x86_64-redhat-linux/
+<span class="token assign-left variable">LIBRARY_PATH</span><span class="token operator">=</span>/usr/lib/gcc/x86_64-redhat-linux/13/:/usr/lib/gcc/x86_64-redhat-linux/13/<span class="token punctuation">..</span>/<span class="token punctuation">..</span>/<span class="token punctuation">..</span>/<span class="token punctuation">..</span>/lib64/:/lib/<span class="token punctuation">..</span>/lib64/:/usr/lib/<span class="token punctuation">..</span>/lib64/:/usr/lib/gcc/x86_64-redhat-linux/13/<span class="token punctuation">..</span>/<span class="token punctuation">..</span>/<span class="token punctuation">..</span>/:/lib/:/usr/lib/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>结合翻译阶段来看, 可以发现是第三阶段时将&quot;0xE+b&quot;视为一个整体, 第七阶段编译进行到第三阶段产生语法树时发现不对了, 于是报错。</p>
+<p>由此可见, 在运算符两旁加空格不仅是为了美观, <strong>更是为了避免因&quot;最大吞噬&quot;导致的编译错误</strong>。</p>
+<p>所以各位, 代码一定要美观啊! 要不然连编译器都受不了了报错啊！</p>
+]]></content>
+      <tags>
+        <tag>C</tag>
+        <tag>学习</tag>
+        <tag>实验</tag>
       </tags>
   </entry>
 </search>
