@@ -176,6 +176,11 @@ chsh <span class="token parameter variable">-s</span> /bin/zsh
 <p>众所周知，<a href="https://wiki.mbalib.com/wiki/GFW">GFW</a>导致国内访问github困难，所以梯子是必备的<br>
 不详细说明了，直接贴连接吧： <a href="https://github.com/wanhebin/clash-for-linux">https://github.com/wanhebin/clash-for-linux</a><br>
 <br></p>
+<h3 id="安装Windows常用软件"><a class="header-anchor" href="#安装Windows常用软件"></a>安装Windows常用软件</h3>
+<h4 id="微信"><a class="header-anchor" href="#微信"></a>微信</h4>
+<p><a href="https://github.com/xuthus5/fedora-packager">https://github.com/xuthus5/fedora-packager</a></p>
+<h4 id="钉钉"><a class="header-anchor" href="#钉钉"></a>钉钉</h4>
+<p><a href="https://github.com/zhullyb/dingtalk-for-fedora">https://github.com/zhullyb/dingtalk-for-fedora</a></p>
 <h2 id="结语"><a class="header-anchor" href="#结语"></a>结语</h2>
 <p>折腾了两天，在网络资源和室友的帮助下搞好了Fedora，Fedora的软件支持确实比Ubuntu少的多，而且问题也多，但折腾的过程很享受<br>
 不得不说，笔记本用Linux确实比Windows好，Windows开机就占了8GB内存，Linux只占3GB，使用也只占不到5GB，LinuxNB！！！<br>
