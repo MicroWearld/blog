@@ -8,6 +8,11 @@ on:
       - main
   workflow_dispatch:
 
+# 显式授予写权限:peaceiris 需要往 gh-pages 分支推送构建产物
+# (新仓库默认 token 为 read-only,不加会 403)
+permissions:
+  contents: write
+
 jobs:
   build-deploy:
     runs-on: ubuntu-24.04
