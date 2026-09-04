@@ -1,0 +1,42 @@
+/* Editorial Frost scheme — 冷墨编辑部:冷调深墨蓝底 + 衬线阅读体系
+   底色冷墨蓝(非纯黑/非暖褐),文本冷纸白,主强调苍冰蓝,次强调青玉 */
+:root {
+  /* 正文冷纸白 */
+  --color-neutral: 230, 236, 242; /* #E6ECF2 */
+
+  /* 冷墨中性阶梯 */
+  --color-neutral-50: 246, 249, 252;
+  --color-neutral-100: 230, 236, 242; /* 正文 */
+  --color-neutral-200: 205, 215, 226; /* 次强调文本 */
+  --color-neutral-300: 169, 182, 196;
+  --color-neutral-400: 122, 137, 154; /* 弱化/元数据 */
+  --color-neutral-500: 92, 107, 124;
+  --color-neutral-600: 67, 80, 95;
+  --color-neutral-700: 43, 54, 68;
+  --color-neutral-800: 22, 32, 43;    /* 页面底色 #16202B 冷墨蓝 */
+  --color-neutral-900: 13, 19, 28;    /* 深墨蓝黑 */
+
+  /* 主强调:苍冰蓝 */
+  --color-primary-50: 240, 246, 252;
+  --color-primary-100: 222, 234, 246;
+  --color-primary-200: 189, 213, 238;
+  --color-primary-300: 150, 187, 226;
+  --color-primary-400: 118, 163, 214; /* #76A3D6 */
+  --color-primary-500: 92, 138, 194;  /* #5C8AC2 */
+  --color-primary-600: 71, 108, 156;
+  --color-primary-700: 54, 84, 124;
+  --color-primary-800: 39, 60, 90;
+  --color-primary-900: 25, 39, 61;
+
+  /* 次强调:青玉(克制的冷点缀) */
+  --color-secondary-50: 238, 248, 247;
+  --color-secondary-100: 216, 239, 237;
+  --color-secondary-200: 178, 222, 219;
+  --color-secondary-300: 133, 199, 196;
+  --color-secondary-400: 92, 171, 169;
+  --color-secondary-500: 64, 141, 140; /* #408D8C */
+  --color-secondary-600: 51, 114, 113;
+  --color-secondary-700: 41, 88, 88;
+  --color-secondary-800: 29, 63, 63;
+  --color-secondary-900: 19, 41, 41;
+}

@@ -1,0 +1,254 @@
+/* ============================================================
+   站点级覆盖 — 冷墨编辑部 (Editorial Frost)
+   阅读优先:衬线标题与正文、冷墨底色、克制点缀
+   遮罩复刻参考站 vkmki001:文章磨砂底 + 首页渐变溶底
+   色值引用 scheme 变量;带透明度一律 color-mix
+   (rgb(var(--x) / a) 逗号+斜杠语法会被浏览器拒收)
+   ============================================================ */
+
+/* ---------- 纸感字体层 ---------- */
+:root {
+  --font-editorial: "Noto Serif SC", "Source Han Serif SC", "Songti SC",
+    STSong, "SimSun", serif;
+}
+/* 标题统一衬线(含首页 hero 大字) */
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-editorial);
+  letter-spacing: 0.01em;
+}
+/* 文章正文与随笔正文用衬线,行距放宽到纸书感 */
+.article-content p,
+.article-content li,
+.article-content blockquote,
+.article-content .landing-rise,
+main > article.prose p {
+  font-family: var(--font-editorial);
+}
+.article-content {
+  line-height: 1.95;
+}
+.article-content p {
+  margin-bottom: 1.35em;
+}
+/* 引用块:左侧细冷青线 */
+.article-content blockquote {
+  border-left-width: 3px;
+  border-left-color: color-mix(in oklab, rgb(var(--color-secondary-500)) 55%, transparent);
+  font-style: normal;
+  color: rgb(var(--color-neutral-200));
+}
+
+/* ---------- 背景滚动行为参数 ----------
+   hero 渐隐:首页 hero 透明度淡出参数
+   hero 模糊:文章背景图滚动模糊(顶部清晰 → 深度保持高度模糊) */
+:root {
+  --hero-fade-distance: 700px;
+  --hero-fade-min: 0;
+  --hero-blur-distance: 900px;
+  --hero-blur-max: 42;
+}
+
+/* ---------- 固定 header 占位修正 ---------- */
+header > div[class*="min-h"] {
+  min-height: 4rem;
+}
+
+/* ---------- 文章页背景:清晰 → 滚动模糊(参考 vkmki001 磨砂演进版) ----------
+   #hero-background 固定 800px 顶带,内含 featureimage/默认 hero-home.jpg
+   模糊由站点版 hero-scroll-fade.js 按滚动驱动(0 → 42px,4px 步进);
+   此处只保留 scale 防止模糊边缘穿帮,不再静态模糊 */
+#hero-background {
+  overflow: hidden;
+}
+#hero-background img {
+  transform: scale(1.06);
+}
+
+/* ---------- 首页背景:底部渐变溶入页面底色(参考 vkmki001) ---------- */
+#landing-hero-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* 68vh 半屏 hero:渐变在 ~94%(≈590px/640px)收实,文章流露出区干净 */
+  background: linear-gradient(
+    to bottom,
+    transparent 55%,
+    color-mix(in oklab, rgb(var(--color-neutral-800)) 55%, transparent) 82%,
+    rgb(var(--color-neutral-800)) 94%
+  );
+  pointer-events: none;
+}
+
+/* ---------- 右侧目录:半透明衬底 ---------- */
+.toc {
+  background: color-mix(in oklab, rgb(var(--color-neutral-900)) 50%, transparent);
+  border: 1px solid color-mix(in oklab, rgb(var(--color-primary-500)) 16%, transparent);
+  border-radius: 0.7rem;
+  padding: 0.6rem 0.9rem;
+}
+.toc ul {
+  margin-top: 0.25rem;
+}
+
+/* ---------- 代码块:衬底与呼吸 ---------- */
+.article-content pre {
+  border: 1px solid color-mix(in oklab, rgb(var(--color-neutral-100)) 9%, transparent);
+  border-radius: 0.6rem;
+  padding: 1.1rem 1.25rem;
+  background: color-mix(in oklab, rgb(var(--color-neutral-900)) 60%, transparent);
+}
+/* 注释提亮(Chroma 注释类) */
+.article-content pre .c,
+.article-content pre .c1,
+.article-content pre .sd {
+  color: rgb(var(--color-neutral-400)) !important;
+}
+
+/* ---------- 代码雨遮罩:首页 + 非阅读页(归档/分类/标签/系列/关于等) ----------
+   main 建 stacking context,雨层(z:-1)落在正文与首页 hero 图之下、页面底色之上
+   文章阅读页:雨只落左右边缘带(各 170px 实 + 70px 渐隐),正文列恒净 */
+main {
+  position: relative;
+  z-index: 0;
+}
+main::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: url("/img/code-rain.svg") center / cover no-repeat;
+}
+/* 文章页(有磨砂 hero):恢复雨,但用双侧像素遮罩裁成左右边缘带 */
+body:has(#hero-background) main::before {
+  -webkit-mask-image: linear-gradient(to right, #000 0px, #000 170px, transparent 240px, transparent 100%),
+    linear-gradient(to left, #000 0px, #000 170px, transparent 240px, transparent 100%);
+  mask-image: linear-gradient(to right, #000 0px, #000 170px, transparent 240px, transparent 100%),
+    linear-gradient(to left, #000 0px, #000 170px, transparent 240px, transparent 100%);
+  mask-composite: add;
+  -webkit-mask-composite: source-over;
+}
+/* 窄屏(移动端):文章页完全净读,不做边缘雨 */
+@media (max-width: 640px) {
+  body:has(#hero-background) main::before {
+    content: none;
+  }
+}
+
+/* 文章顶部背景 100% 清晰:方案B 标题细微投影 + 方案A 遮罩加深到 60% */
+body:has(#hero-background) main h1 {
+  text-shadow: 0 1px 3px color-mix(in oklab, rgb(var(--color-neutral-900)) 85%, transparent),
+    0 0 18px color-mix(in oklab, rgb(var(--color-neutral-900)) 50%, transparent);
+}
+body:has(#hero-background) #hero-background > div.absolute {
+  background-color: color-mix(in oklab, rgb(var(--color-neutral-800)) 60%, transparent);
+}
+
+/* ---------- 磨砂玻璃材质(header / 搜索钮 / 移动面板 / TOC) ---------- */
+/* 顶部菜单条:半透明墨蓝 + 背景模糊,滚动时背后的代码雨/hero 呈磨砂光晕 */
+body > header div.fixed.top-0.inset-x-0 {
+  background-color: color-mix(in oklab, rgb(var(--color-neutral-800)) 48%, transparent);
+  -webkit-backdrop-filter: blur(22px) saturate(1.6) brightness(1.12);
+  backdrop-filter: blur(22px) saturate(1.6) brightness(1.12);
+  border-bottom: 1px solid color-mix(in oklab, rgb(var(--color-neutral-100)) 12%, transparent);
+  box-shadow: inset 0 1px 0 color-mix(in oklab, rgb(var(--color-neutral-100)) 10%, transparent),
+    0 6px 24px rgb(var(--color-neutral-900) / 0.35);
+}
+/* 菜单条内固定圆钮(搜索等):同样玻璃化 */
+body > header label.fixed.rounded-full {
+  background-color: color-mix(in oklab, rgb(var(--color-neutral-800)) 55%, transparent);
+  -webkit-backdrop-filter: blur(12px) saturate(1.4);
+  backdrop-filter: blur(12px) saturate(1.4);
+  border: 1px solid color-mix(in oklab, rgb(var(--color-neutral-100)) 12%, transparent);
+}
+/* 移动端全屏菜单面板:深玻璃 */
+body > header div.fixed.inset-0.z-50,
+body > header div[class*="z-50"][class*="backdrop"] {
+  background-color: color-mix(in oklab, rgb(var(--color-neutral-900)) 82%, transparent);
+  -webkit-backdrop-filter: blur(26px) saturate(1.3);
+  backdrop-filter: blur(26px) saturate(1.3);
+}
+/* TOC 目录:磨砂卡片(低不透明度 + blur,背景任何内容皆透出柔光) */
+.toc {
+  background-color: color-mix(in oklab, rgb(var(--color-neutral-900)) 26%, transparent);
+  -webkit-backdrop-filter: blur(16px) saturate(1.6) brightness(1.1);
+  backdrop-filter: blur(16px) saturate(1.6) brightness(1.1);
+  border: 1px solid color-mix(in oklab, rgb(var(--color-neutral-100)) 13%, transparent);
+  box-shadow: inset 0 1px 0 color-mix(in oklab, rgb(var(--color-neutral-100)) 8%, transparent),
+    0 10px 28px rgb(var(--color-neutral-900) / 0.4);
+}
+
+/* 列表行:徽记行与标题的间距 */
+.article-meta-row:not(.article-meta-head) {
+  margin-top: 0.5rem;
+}
+
+/* ---------- mode 阅读契约徽记(教程/复盘/随笔) ---------- */
+.mode-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.08rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  line-height: 1.6;
+  letter-spacing: 0.1em;
+  border: 1px solid;
+  font-family: var(--font-editorial);
+  white-space: nowrap;
+}
+.mode-badge.tutorial {
+  color: rgb(var(--color-primary-300));
+  border-color: color-mix(in oklab, rgb(var(--color-primary-400)) 38%, transparent);
+  background-color: color-mix(in oklab, rgb(var(--color-primary-400)) 10%, transparent);
+}
+.mode-badge.note {
+  color: rgb(var(--color-secondary-300));
+  border-color: color-mix(in oklab, rgb(var(--color-secondary-400)) 38%, transparent);
+  background-color: color-mix(in oklab, rgb(var(--color-secondary-400)) 10%, transparent);
+}
+.mode-badge.story {
+  color: rgb(var(--color-neutral-300));
+  border-color: color-mix(in oklab, rgb(var(--color-neutral-400)) 34%, transparent);
+  background-color: color-mix(in oklab, rgb(var(--color-neutral-100)) 7%, transparent);
+}
+
+/* ---------- 首页 landing:半屏 hero + 滚动引导 ----------
+   hero 高 68vh:首屏底部露出「最近的文章」首条,提示可继续滚动;
+   原 100vh 公式废止(需要全屏时改回 100vh - 3.25rem) */
+@media (min-height: 640px) {
+  main > article.relative.isolate.overflow-hidden > section {
+    min-height: 68vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+}
+/* 滚动引导:底部中央一条向下呼吸的细光线(纯 CSS 动画,无 JS) */
+body:has(#landing-hero-background)
+  main
+  > article.relative.isolate.overflow-hidden
+  > section::after {
+  content: "";
+  position: absolute;
+  bottom: 0.9rem;
+  left: 50%;
+  width: 1.5px;
+  height: 2.4rem;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    color-mix(in oklab, rgb(var(--color-secondary-300)) 65%, transparent),
+    transparent
+  );
+  opacity: 0;
+  animation: home-scroll-cue 2.4s ease-in-out 1.2s infinite;
+  pointer-events: none;
+}
+@keyframes home-scroll-cue {
+  0% { opacity: 0; transform: translate(-50%, -8px); }
+  35% { opacity: 0.8; }
+  70% { opacity: 0.25; }
+  100% { opacity: 0; transform: translate(-50%, 6px); }
+}

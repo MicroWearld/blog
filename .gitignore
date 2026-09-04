@@ -1,0 +1,16 @@
+# Hugo 构建产物
+public/
+resources/
+.hugo_build.lock
+
+# 本地预览/截图(交付物不入库)
+.preview/
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+
+# 系统
+Thumbs.db
+.DS_Store

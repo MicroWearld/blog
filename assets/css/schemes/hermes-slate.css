@@ -1,0 +1,38 @@
+/* Hermes slate-custom scheme — 移植自 Hermes Desktop 皮肤 slate-custom(#151C2F 底 / #7eb8f6 强调) */
+:root {
+  /* 正文/浅色模式文本 */
+  --color-neutral: 201, 209, 217; /* #c9d1d9 */
+  /* 中性灰阶(深色为底,自底向亮) */
+  --color-neutral-50: 214, 220, 228;
+  --color-neutral-100: 201, 209, 217; /* #c9d1d9 正文 */
+  --color-neutral-200: 176, 184, 196;
+  --color-neutral-300: 130, 140, 155;
+  --color-neutral-400: 93, 102, 114; /* #5D6672 弱化 */
+  --color-neutral-500: 60, 74, 106;
+  --color-neutral-600: 44, 56, 84;
+  --color-neutral-700: 30, 40, 66;
+  --color-neutral-800: 21, 28, 47; /* #151C2F 页面背景(dark) */
+  --color-neutral-900: 17, 22, 38;
+  /* 主强调 #7eb8f6(Hermes accent) */
+  --color-primary-50: 245, 250, 255;
+  --color-primary-100: 232, 244, 254;
+  --color-primary-200: 206, 232, 252;
+  --color-primary-300: 172, 213, 249;
+  --color-primary-400: 150, 198, 248;
+  --color-primary-500: 126, 184, 246; /* #7eb8f6 */
+  --color-primary-600: 82, 152, 228;
+  --color-primary-700: 65, 105, 225; /* #4169e1 banner_border */
+  --color-primary-800: 45, 82, 178;
+  --color-primary-900: 30, 58, 128;
+  /* 次强调 #8EA8FF */
+  --color-secondary-50: 244, 247, 255;
+  --color-secondary-100: 232, 238, 255;
+  --color-secondary-200: 210, 222, 255;
+  --color-secondary-300: 184, 202, 255;
+  --color-secondary-400: 160, 183, 255;
+  --color-secondary-500: 142, 168, 255; /* #8EA8FF */
+  --color-secondary-600: 105, 130, 235;
+  --color-secondary-700: 78, 98, 205;
+  --color-secondary-800: 56, 71, 150;
+  --color-secondary-900: 38, 48, 105;
+}

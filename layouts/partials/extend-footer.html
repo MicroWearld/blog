@@ -1,0 +1,10 @@
+{{/* 浏览人数记录(不蒜子 busuanzi,零后端;localhost 计数无意义,部署后生效)
+    SRI 说明:busuanzi 官方未发布 integrity 哈希,社区标准用法即直接引入 */}}
+<div class="mt-4 text-xs text-neutral-500 dark:text-neutral-400">
+  <span>总访问量 <span id="busuanzi_value_site_pv"></span></span>
+  <span class="mx-1">·</span>
+  <span>总访客 <span id="busuanzi_value_site_uv"></span></span>
+  <span class="mx-1">·</span>
+  <span>本页阅读 <span id="busuanzi_value_page_pv"></span></span>
+</div>
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>

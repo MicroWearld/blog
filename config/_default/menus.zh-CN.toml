@@ -1,0 +1,39 @@
+# -- 主菜单 --
+# 标准博客结构:首页 / 分类 / 标签 / 系列 / 关于 + GitHub
+
+[[main]]
+  name = "首页"
+  pageRef = "/"
+  weight = 10
+
+[[main]]
+  name = "分类"
+  pageRef = "categories"
+  weight = 20
+
+[[main]]
+  name = "标签"
+  pageRef = "tags"
+  weight = 30
+
+[[main]]
+  name = "系列"
+  pageRef = "series"
+  weight = 40
+
+[[main]]
+  name = "归档"
+  pageRef = "posts"
+  weight = 45
+
+[[main]]
+  name = "关于"
+  pageRef = "about"
+  weight = 50
+
+[[main]]
+  name = ""
+  pre = "github"
+  title = "GitHub"
+  url = "https://github.com/MicroWearld"
+  weight = 60
