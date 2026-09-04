@@ -1,0 +1,11 @@
+[
+  { "lang": "zh-CN", "line": "任何傻瓜都能写出计算机能理解的代码。优秀的程序员写的是人类能理解的代码。", "source": "Martin Fowler" },
+  { "lang": "zh-CN", "line": "过早优化是万恶之源。", "source": "Donald Knuth" },
+  { "lang": "zh-CN", "line": "计算机科学并不比算命更古老。", "source": "Alan Perlis" },
+  { "lang": "zh-CN", "line": "简单是可靠的前提。", "source": "Edsger W. Dijkstra" },
+  { "lang": "zh-CN", "line": "预测未来最好的方式就是创造它。", "source": "Alan Kay" },
+  { "lang": "zh-CN", "line": "任何足够先进的技术都与魔法无异。", "source": "Arthur C. Clarke" },
+  { "lang": "zh-CN", "line": "调试的难度是写代码的两倍。", "source": "Brian Kernighan" },
+  { "lang": "zh-CN", "line": "先让它能跑,再让它跑对,最后让它跑快。", "source": "Kent Beck" },
+  { "lang": "zh-CN", "line": "空谈廉价,给我看代码。", "source": "Linus Torvalds" }
+]
