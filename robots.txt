@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://microweard.github.io/blog/sitemap.xml
