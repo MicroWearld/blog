@@ -117,7 +117,7 @@ main::before {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background: url("/img/code-rain.svg") center / cover no-repeat;
+  background: url("../img/code-rain.svg") center / cover no-repeat;
 }
 /* 文章页(有磨砂 hero):恢复雨,但用双侧像素遮罩裁成左右边缘带 */
 body:has(#hero-background) main::before {
