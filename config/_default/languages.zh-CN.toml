@@ -15,6 +15,6 @@ title = "MicroWearld 的技术博客"
   bio = "学习记录 / 项目工作 / 个人随笔"
   links = [
     { github = "https://github.com/MicroWearld" },
-    { rss = "/index.xml" },
+    { rss = "https://microwearld.github.io/blog/index.xml" }, # author-links 原样输出 URL,子路径部署必须写绝对地址
     { email = "chenyuw40@gmail.com" }, # 裸邮箱:模板 base64 编码,email.js 客户端解码成 mailto:(反爬)
   ]

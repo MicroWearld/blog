@@ -36,4 +36,4 @@ showWordCount: false
 
 ## 联系与纠错
 
-发现错误或有想法，欢迎在 GitHub 提 issue：[github.com/MicroWearld](https://github.com/MicroWearld)。订阅更新可以跟 [RSS 源](/index.xml)。
+发现错误或有想法，欢迎在 GitHub 提 issue：[github.com/MicroWearld](https://github.com/MicroWearld)。订阅更新可以跟 [RSS 源](/blog/index.xml)。
