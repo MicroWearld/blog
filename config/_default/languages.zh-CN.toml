@@ -16,5 +16,5 @@ title = "MicroWearld 的技术博客"
   links = [
     { github = "https://github.com/MicroWearld" },
     { rss = "/index.xml" },
-    { email = "mailto:chenyuw40@gmail.com" },
+    { email = "chenyuw40@gmail.com" }, # 裸邮箱:模板 base64 编码,email.js 客户端解码成 mailto:(反爬)
   ]
