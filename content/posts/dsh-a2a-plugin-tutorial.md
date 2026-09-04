@@ -1,6 +1,7 @@
 +++
 title = "给 DeepSeek Harness 装上 A2A 协议：两个插件的设计与实现"
 date = 2026-09-03T09:00:00+08:00
+summary = "给 DeepSeek Harness 装上 A2A 协议:两个独立插件(dsh-a2a-server / dsh-subagent-a2a)的设计与实现,全程复用官方 SDK、不动 agent-loop 一行核心代码。"
 mode = "tutorial"
 categories = ["学习记录"]
 tags = ["dsh", "a2a", "插件", "deepseek-harness"]

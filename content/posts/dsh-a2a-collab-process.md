@@ -1,6 +1,7 @@
 +++
 title = "从一句模糊需求到两个插件：和 dsh 跨周攻坚 A2A 的记录"
 date = 2026-09-03T10:00:00+08:00
+summary = "从一句拼错的需求到两个发布在 GitHub 的插件:一篇关于和 dsh 跨周攻坚 A2A 的协作方法记录,不是流水账。"
 mode = "note"
 categories = ["项目工作"]
 tags = ["dsh", "a2a", "ai协作", "复盘"]

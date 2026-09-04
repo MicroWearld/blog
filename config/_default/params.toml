@@ -9,6 +9,9 @@ colorScheme = "editorial-frost"
 defaultAppearance = "dark" # valid options: light or dark
 autoSwitchAppearance = false
 
+# 站点级 meta description(列表/分类/标签等无独立描述页面的兜底)
+description = "冷墨编辑部 —— MicroWearld 的技术博客:学习记录、项目工作与个人随笔,记录与 AI 协作的工程实践。"
+
 # 站点版权声明({ year } 占位符会被替换为当前年份)
 copyright = '© { year } MicroWearld · 采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a> 协议'
 
