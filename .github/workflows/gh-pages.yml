@@ -1,5 +1,5 @@
-# Blowfish 官方推荐的 GitHub Pages 自动部署工作流
-# 参考: https://blowfish.page/docs/hosting-deployment/#github-pages
+# GitHub Pages 官方推荐部署:actions/deploy-pages 三件套
+# 相对 legacy 分支模式,边缘挂载通过 deployments API,即时可靠
 name: GitHub Pages
 
 on:
@@ -8,16 +8,19 @@ on:
       - main
   workflow_dispatch:
 
-# 显式授予写权限:peaceiris 需要往 gh-pages 分支推送构建产物
-# (新仓库默认 token 为 read-only,不加会 403)
+# 需要读写权限 + id-token(部署 Pages 必需)
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-24.04
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -28,16 +31,27 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: "0.165.0" # 与本地测试版本一致(extended,含 Tailwind)
+          hugo-version: "0.165.0"
           extended: true
 
       - name: Build
         run: hugo --minify
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
-        if: ${{ github.ref == 'refs/heads/main' }}
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: ./public
+          path: ./public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
