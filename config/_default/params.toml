@@ -31,7 +31,7 @@ disableTextInHeader = false
 defaultBackgroundImage = "img/hero-home.jpg" # 文章默认背景(单篇 featureimage 覆盖);blur42 磨砂成冷雾
 # backgroundCanvas = false # render defaultBackgroundImage as a fixed backdrop on every page
 # defaultFeaturedImage = "IMAGE.jpg" # used as default for featured images in all articles
-defaultSocialImage = "/og-image.png" # 社交分享卡(微信/QQ/OG 用,1200x630 编辑部风)
+defaultSocialImage = "img/og-image.png" # 社交分享卡(注意:模板用 resources.Get 从 assets/ 取,须放 assets/img)
 hotlinkFeatureImage = false
 # Thumbnail aspect ratio as a number (e.g., "1.5", "1.0", "1.777")
 # thumbnailAspectRatio = "1.5"

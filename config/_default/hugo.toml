@@ -3,7 +3,7 @@
 # https://blowfish.page/docs/getting-started/
 
 theme = "blowfish" # UNCOMMENT THIS LINE
-baseURL = "https://microweard.github.io/blog/" # GitHub 仓库 Pages 子路径部署
+baseURL = "https://microwearld.github.io/blog/" # GitHub 仓库 Pages 子路径部署(注意域名带 l: microWearld)
 defaultContentLanguage = "zh-CN"
 
 # pluralizeListTitles = "true" # hugo function useful for non-english languages, find out more in  https://gohugo.io/getting-started/configuration/#pluralizelisttitles
