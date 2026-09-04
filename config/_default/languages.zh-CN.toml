@@ -15,4 +15,5 @@ title = "MicroWearld 的技术博客"
   bio = "学习记录 / 项目工作 / 个人随笔"
   links = [
     { github = "https://github.com/MicroWearld" },
+    { rss = "/index.xml" },
   ]

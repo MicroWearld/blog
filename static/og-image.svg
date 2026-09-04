@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="ink" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#152130"/>
+      <stop offset="1" stop-color="#0E1823"/>
+    </linearGradient>
+    <linearGradient id="glyph" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F2F7FB"/>
+      <stop offset="1" stop-color="#C9DBEA"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.45" r="0.55">
+      <stop offset="0" stop-color="#59B8AC" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#59B8AC" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#ink)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <!-- 微弱代码雨点缀(左右边缘,低对比) -->
+  <g font-family="Consolas,Menlo,monospace" font-size="16" fill="#7FA3C9">
+    <text x="48" y="120" fill-opacity="0.10">0101</text>
+    <text x="40" y="210" fill-opacity="0.08">A2A</text>
+    <text x="52" y="300" fill-opacity="0.07">0110</text>
+    <text x="1120" y="150" fill-opacity="0.10">F3</text>
+    <text x="1108" y="260" fill-opacity="0.08">dsh</text>
+    <text x="1122" y="370" fill-opacity="0.07">0x1F</text>
+    <text x="1112" y="470" fill-opacity="0.08">101</text>
+  </g>
+  <!-- 几何 M -->
+  <g fill="none" stroke="#7FA3C9" stroke-width="26" stroke-linecap="butt" opacity="0.30">
+    <path d="M470 380 V215 M470 215 L600 345 L730 215 M730 215 V380"/>
+  </g>
+  <g fill="none" stroke="url(#glyph)" stroke-width="21" stroke-linecap="butt">
+    <path d="M470 380 V215 M470 215 L600 345 L730 215 M730 215 V380"/>
+  </g>
+  <!-- 终端光标 -->
+  <rect x="555" y="415" width="90" height="9" rx="4.5" fill="#59B8AC"/>
+  <!-- 站点名 -->
+  <text x="600" y="500" text-anchor="middle" font-family="Noto Serif SC, Source Han Serif SC, Songti SC, SimSun, serif" font-size="52" fill="#EFE7D8" letter-spacing="2">MicroWearld 的技术博客</text>
+  <!-- 副标题 -->
+  <text x="600" y="556" text-anchor="middle" font-family="Noto Serif SC, Source Han Serif SC, Songti SC, SimSun, serif" font-size="24" fill="#9A8F7E" letter-spacing="6">学习记录 · 项目工作 · 个人随笔</text>
+</svg>
